@@ -98,9 +98,9 @@ const Home = () => {
                         </form>
                     </div>
                     <div className="col-8">
-                        Contactos: {contactList.length}
+                        { contactList<=0 ? "Usted no tiene contactos registrados":  "Contactos: " + contactList.length }
                     </div>
-                    { error == true ?<div className="col-8 alert alert-danger">Todos los campos son necesarios</div>:""}
+                    { error == true ? <div className="col-8 alert alert-danger">Todos los campos son necesarios</div>:""}
                 </div>
             </div>
             <div className="container">
@@ -110,14 +110,14 @@ const Home = () => {
                         return(
                     
                     <div key="index" className="col-12 col-md-8 border">
-                        <div className="d-flex border border-danger m-3">
-                            <div className="border border-primary mx-3">
+                        <div className="d-flex m-3">
+                            <div className="mx-3">
                                 <img className="rounded-circle mt-2" src={`https://picsum.photos/100/100?random=${Math.floor(Math.random()*200)}`} alt="image" />
                             </div>
-                            <div className="border border-success">
-                                <p> <span>Email: {item.email} </span> </p>
-                                <p> <span>Name: {item.name} </span> </p>
-                                <p> <span>Phone Number: {item.myPhoneNumber}</span> </p>
+                            <div className="">
+                                <p> <span> <b>Email:</b>  {item.email} </span> </p>
+                                <p> <span> <b>Name:</b> {item.name} </span> </p>
+                                <p> <span> <b>Phone Number:</b> {item.myPhoneNumber}</span> </p>
                             </div>
                         </div>
                     </div>
